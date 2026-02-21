@@ -33,7 +33,10 @@ Your response MUST follow this exact structure:
 
 **Additional Details:** Any extra observations from the screenshot.`;
 
-    const userContent: Array<{ type: string; image_url?: { url: string }; text?: string }> = [
+    const userContent: Array<
+        | { type: 'image_url'; image_url: { url: string } }
+        | { type: 'text'; text: string }
+    > = [
         {
             type: 'image_url',
             image_url: {
